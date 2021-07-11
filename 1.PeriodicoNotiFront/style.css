@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0%;
+}
+
+header {
+    padding: 0.5rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+header h1 span{
+    color: blue;
+}
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+}
+header nav ul {
+    display: flex;
+    gap: 13px;
+    list-style-type: none;
+}
+header nav ul a:link, a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+header nav ul a:hover{
+    color: blue;
+    scale: 1.1;
+}
+
+header .header__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header__logo img{
+    width: 10%;
+    background-color: beige;
+}
+.lupa:hover{
+    background-color: black;
+    color: white;
+    padding: 3px;
+}
+.fondo{
+    background-size: contain;
+    background-color: rgb(11, 11, 51);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+}
+h2{
+    display: flex;
+    justify-content: center;
+}
+h2:hover{
+    scale: 1.1;
+    color: lightslategrey;
+}
+.contenedorNacional, .contenedorInternacional {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    margin: 1rem;
+    border-radius: 5px;
+    border: 2px solid rgb(54, 53, 53);
+    width: 30%;
+    padding: 5px;
+}
+.contenedorNacional .tarjeta:hover{
+    scale: 1.01;
+    background-color: skyblue;
+}
+.contenedorInternacional .tarjeta:hover{
+    scale: 1.01;
+    background-color: lightgoldenrodyellow;
+}
+.tarjeta img{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(54, 53, 53);
+}
+.tarjeta h3, p{
+    padding: 5px;
+    text-align: justify;
+}
+.fecha{
+    display: flex;
+    justify-content: end;
+}
+footer {
+    padding: 0;
+    background-color: lightgrey;
+}
+.grupo{
+    background-color: lightslategray;
+    padding-left: 10px;
+}
+footer .footerContent {
+    display: flex;
+    align-items:center;
+    justify-content:space-evenly;
+}
+footer .footerContent img{
+    width: 5%;
+}
+footer .footerContent ul{
+    list-style: none;
+}
+footer .footerContent ul a:link, a:visited{
+    text-decoration: none;
+    color: black;
+}
+footer .footerContent ul a:hover{
+    color: lightslategray;
+    text-decoration: underline black;
+}
