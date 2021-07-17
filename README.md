@@ -11,6 +11,8 @@ Proyectos curso Frontend II - Digital-House - Certified-Tech-Developer - Daniel 
 8. *Promesas:* Ejercicio de promesas. Link: [Promesas](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/8.ActividadPromesas/).
 9. *API Perritos:* Ejercicio de consumo de API de perritos. Link: [API PErritos](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/9.APIPerritos/).
 10. *API Usuarios:* Ejercicio de consumo de API de usuarios. Link: [API Usuarios](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/10.APIUsuarios/).
+11. *Animaciones:* Ejercicio de animaciones en una barra de carga. Link: [BarraAnimada](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/11.Animaciones/).
+12. *Pokedex:* Ejercicio de pokedex. Link: [Pokedex](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/12.Pokedex/).
 
 
 **Lenguajes**
