@@ -24,11 +24,11 @@ async function fillPokemonData(name, order) {
     console.log(barra);
     
     const valor = pokemonData.stats[index].amount;
-    barra.style.width = valor + '%';
+    barra.style.width = `${valor}%`;
     
     if (valor<35){
       barra.classList.toggle('rojo');
-    }else if(valor<70 && valor>=35){
+    }else if(valor<70){
       barra.classList.toggle('amarillo')
     }else if (valor>=70){
       barra.classList.toggle('verde');
@@ -55,5 +55,4 @@ function agregar(){
   createPokemonCard(nuevoPokemon, pokemons.length);
   fillPokemonData(nuevoPokemon, pokemons.length);
   console.log(nuevoPokemon);
-  console.log("hola");
 }
