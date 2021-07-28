@@ -28,32 +28,52 @@ const baseDeDatos = {
   ],
 };
 
-window.onload = () => {
-  const form = document.forms.sesion;
+const form = document.forms.sesion;
+const email = form.email;
+const password = form.password;
+const button = document.querySelector("button");
+const loader = document.querySelector("#loader");
+const error = document.querySelector("#error-container");
+const iniciarSesion = document.querySelector("h1");
 
-  const password = form.password;
-  const botonIniciarSesion = document.querySelector('.login-btn');
-
-  form.addEventListener('submit', () => {
-    //event.preventDefault();
-    console.log('hola');
-    setTimeout(300);
-  })
-
-  function iniciarSesion(){
-    const errorContainer = document.querySelector("#error-container");
-    setTimeout(() => {
-      document.querySelector("#loader").classList.add("hidden");
-      if (validarDatos(email, password)) {
-        loginExitoso();
-      } else {
-        errorContainer.classList.remove("hidden");
-        errorContainer.innerHTML = "<small>Alguno de los datos ingresados son incorrectos</small>";
-      }
-    }, 3000);
-  }
-
+function validarEmail(email){
+  const expresion = /[A-z]+@[A-z]+.[A-z]{3}/;
+  const test = expresion.test(email);
+  return test;
 }
+
+function validarContrasenia(password){
+  return password.length>=5;
+}
+
+function validarUsuario(email,password){
+  const arrayEmail = baseDeDatos.usuarios.map(usuario => usuario.email);
+  const arrayEmailPassword = baseDeDatos.usuarios.map(usuario => usuario.password);
+  return arrayEmail.includes(email) && arrayEmailPassword.includes(password);
+}
+
+function validar(){
+  const emailValido = validarEmail(email.value);
+  const contrasenia = validarContrasenia(password.value);
+  const usuarioEnBase = validarUsuario(email.value, password.value);
+
+  if ( emailValido && contrasenia && usuarioEnBase){
+    form.style.opacity = 0;
+    iniciarSesion.innerHTML = '<h1> Bienvenido al sitio 😀 </h1>';
+  }else{
+    error.innerHTML = '<small>Alguno de los datos ingresados son incorrectos</small>';
+    loader.classList.add("hidden");
+    error.classList.remove("hidden");
+  }
+}
+
+button.onclick = () => {
+  loader.classList.remove("hidden");
+  setTimeout(() => {
+    validar();
+  }, 3000);
+}
+
 // ACTIVIDAD
 
 // Paso a paso:
