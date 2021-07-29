@@ -1,4 +1,13 @@
 // Esta es la base de datos de nuestros usuarios
+
+window.onload = () => {
+  if (sessionStorage.length !== 0) {
+    const sesion = JSON.parse(sessionStorage.getItem("sesion"));
+    const correoElectronico = sesion.email;
+    paginaBienvenida(correoElectronico); 
+  }
+}
+
 const baseDeDatos = {
   usuarios: [
     {
@@ -27,6 +36,87 @@ const baseDeDatos = {
     },
   ],
 };
+
+const form = document.forms.sesion;
+const email = form.email;
+const password = form.password;
+const button = document.querySelector("button");
+const loader = document.querySelector("#loader");
+const error = document.querySelector("#error-container");
+const iniciarSesion = document.querySelector("h1");
+
+const datosSesion = {
+  name : null,
+  email : null,
+  password : null
+}
+
+function datosSesionStorage(name, email, password){
+  datosSesion.name = name;
+  datosSesion.email = email;
+  datosSesion.password = password;
+
+  sessionStorage.setItem("sesion", JSON.stringify(datosSesion));
+}
+
+function validarEmail(email){
+  const expresion = /[A-z]+@[A-z]+.[A-z]{3}/;
+  const test = expresion.test(email);
+  return test;
+}
+
+function validarContrasenia(password){
+  return password.length>=5;
+}
+
+function validarUsuario(email,password){
+  const arrayEmail = baseDeDatos.usuarios.map(usuario => usuario.email);
+  const arrayEmailPassword = baseDeDatos.usuarios.map(usuario => usuario.password);
+  return arrayEmail.includes(email) && arrayEmailPassword.includes(password);
+}
+
+function obtenerNombre(email){
+  const user = baseDeDatos.usuarios.find(usuario => usuario.email == email);
+  return user.name;
+}
+
+function cartelBienvenida(email){
+  const usuario = obtenerNombre(email);
+  form.style.opacity = 0;
+  iniciarSesion.innerHTML = `<h1> Bienvenido al sitio ${usuario} 😀</h1>`;
+  cerrarSesion();
+  const logOutButton = document.querySelector("#logout-btn");
+  logOutButton.onclick = () => { sessionStorage.clear(); alert("Ha cerrado sesión"); location.reload() }
+}
+
+function cerrarSesion(){
+  const container = document.querySelector("#logout");
+  const template = `<button id="logout-btn" class="logout-btn">Cerrar Sesión</button>`;
+  container.innerHTML += template;
+}
+
+function validar(){
+  const emailValido = validarEmail(email.value);
+  const contrasenia = validarContrasenia(password.value);
+  const usuarioEnBase = validarUsuario(email.value, password.value);
+  const nombreUsuario = obtenerNombre(email.value);
+
+  if ( emailValido && contrasenia && usuarioEnBase){
+    cartelBienvenida(email.value);
+    datosSesion(nombreUsuario,email.value,password.value);
+  }else{
+    error.innerHTML = '<small>Alguno de los datos ingresados son incorrectos</small>';
+    loader.classList.add("hidden");
+    error.classList.remove("hidden");
+  }
+}
+
+button.onclick = () => {
+  loader.classList.remove("hidden");
+  setTimeout(() => {
+    validar();
+  }, 3000);
+}
 
 // ACTIVIDAD
 
