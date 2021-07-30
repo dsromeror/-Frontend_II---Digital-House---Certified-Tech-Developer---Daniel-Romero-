@@ -21,7 +21,6 @@ async function fillPokemonData(name, order) {
 
   atributos.forEach((atributo, index) => {
     const barra = document.querySelector(`#barra-${atributo}-${order}`);
-    console.log(barra);
     
     const valor = pokemonData.stats[index].amount;
     barra.style.width = `${valor}%`;
@@ -42,11 +41,15 @@ async function fillPokemonData(name, order) {
 const pokemons = ["pikachu", "bulbasaur", "charmander", "diglett", "charizard", "bunnelby"];
 
 //INICIALIZADOR - NO TOCAR
-pokemons.forEach((pokemon, index) => {
-  const pokemonNumber = index + 1;
-  createPokemonCard(pokemon, pokemonNumber);
-  fillPokemonData(pokemon, pokemonNumber);
-});
+setTimeout(() => {
+  const contenedorSpinner = document.querySelector("#contenedor-carga");
+  pokemons.forEach((pokemon, index) => {
+    contenedorSpinner.style.display = "none";
+    const pokemonNumber = index + 1;
+    createPokemonCard(pokemon, pokemonNumber);
+    fillPokemonData(pokemon, pokemonNumber);
+  });
+},3500);
 
 function agregar(){
   const nuevoPokemon = prompt("Ingresa el nombre del pokemón todo en minúscula");
@@ -54,5 +57,4 @@ function agregar(){
 
   createPokemonCard(nuevoPokemon, pokemons.length);
   fillPokemonData(nuevoPokemon, pokemons.length);
-  console.log(nuevoPokemon);
 }
