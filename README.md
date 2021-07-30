@@ -13,6 +13,9 @@ Proyectos curso Frontend II - Digital-House - Certified-Tech-Developer - Daniel 
 10. *API Usuarios:* Ejercicio de consumo de API de usuarios. Link: [API Usuarios](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/10.APIUsuarios/).
 11. *Animaciones:* Ejercicio de animaciones en una barra de carga. Link: [BarraAnimada](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/11.Animaciones/).
 12. *Pokedex:* Ejercicio de pokedex. Link: [Pokedex](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/12.Pokedex/).
+13. *Skeleton:* Ejercicio de ejemplo para un skeleton. Link: [Skeleton](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/13.Skeleton/).
+14. *Pokedex+Skeleton:* Ejercicio de skeleton sobre cards de pokemón. Link: [PokedexSkeleton](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/14.PokedexSkeleton/).
+15. *Proyecto:* Proyecto integrador ToDo. Link: [Proyecto](https://dsromeror.github.io/Frontend_II---Digital-House---Certified-Tech-Developer---Daniel-Romero/ProyectoIntegrado(ToDo)/).
 
 
 **Lenguajes**
